@@ -1,9 +1,12 @@
 <template >
-  <div class="center">
-    <button id="butt" @click="getNatal()">Já é Natal?</button>
-    <div id='resp' >
-      {{ resp }}
+  <div class="  max-w-sm mx-auto my-auto"> 
+    <div class=" px-[10%] ml-[25%] my-[75%] mx-auto  space-x-2 space-y-2   ">
+      <button class="px-7  bg-[#152]  shadow-md ms-0 rounded-xl mx-[10%]  text-xl    " @click="getNatal()">Já é Natal?</button>
+      <div  class="px-2 text-xl ms-[50%] ">
+          {{ resp }}
+      </div>    
     </div>
+ 
   </div>
 </template>
 
