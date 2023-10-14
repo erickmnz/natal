@@ -1,25 +1,21 @@
-
 <script lang="ts" setup>
-import { ref } from 'vue';
+import { ref } from 'vue'
+
 const resp = ref("")
-
 async function getNatal() {
+  
   try {
-
-    const response = await fetch("http://localhost:2345/api/natal"
-    );
-
+    const response = await fetch("http://localhost:2345/api/natal")
     const jsons = await response.json()
-    resp.value = jsons.natal ?
-      "Sim, é natal."
+    resp.value = jsons.natal 
+      ? "Sim, é natal."
       : "Ainda não"
-
-  } catch (err: any) {
-    throw new Error(err.message);
+  } catch (err:any) {
+    resp.value = `Houve um erro: ${err.message}`
+    console.trace(err)
   }
-};
+}
 </script>
-
 <template >
   <div class="
     max-w-sm
@@ -49,7 +45,6 @@ async function getNatal() {
         {{ resp }}
       </div>
     </div>
-
   </div>
 </template>
 
